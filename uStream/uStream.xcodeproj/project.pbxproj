@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A526C0DC15E7B90600BDC55B /* EchoConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A526C0D815E7B90600BDC55B /* EchoConnection.m */; };
+		A526C0DD15E7B90600BDC55B /* EchoServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A526C0DA15E7B90600BDC55B /* EchoServer.m */; };
+		A526C0E015E7BEC600BDC55B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A526C0DF15E7BEC600BDC55B /* CFNetwork.framework */; };
+		A526C0E315E7C09600BDC55B /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = A526C0E215E7C09600BDC55B /* Client.m */; };
+		A55AAE9215E675B500F42C43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A55AAE9115E675B500F42C43 /* UIKit.framework */; };
+		A55AAE9415E675B500F42C43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A55AAE9315E675B500F42C43 /* Foundation.framework */; };
+		A55AAE9615E675B500F42C43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A55AAE9515E675B500F42C43 /* CoreGraphics.framework */; };
+		A55AAE9C15E675B500F42C43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A55AAE9A15E675B500F42C43 /* InfoPlist.strings */; };
+		A55AAE9E15E675B500F42C43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A55AAE9D15E675B500F42C43 /* main.m */; };
+		A55AAEA215E675B500F42C43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A55AAEA115E675B500F42C43 /* AppDelegate.m */; };
+		A55AAEA515E675B500F42C43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55AAEA415E675B500F42C43 /* ViewController.m */; };
+		A55AAEA815E675B500F42C43 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A55AAEA615E675B500F42C43 /* ViewController.xib */; };
+		A5C73D6215E6782900C89E37 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C73D6115E6782900C89E37 /* AVFoundation.framework */; };
+		A5C73D6515E679F000C89E37 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C73D6415E679F000C89E37 /* QuartzCore.framework */; };
+		A5C73D6B15E7874D00C89E37 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C73D6A15E7874D00C89E37 /* MobileCoreServices.framework */; };
+		A5C73D6D15E7883300C89E37 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C73D6C15E7883300C89E37 /* CoreVideo.framework */; };
+		A5C73D6F15E7885000C89E37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C73D6E15E7885000C89E37 /* CoreMedia.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A526C0D715E7B90600BDC55B /* EchoConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoConnection.h; sourceTree = "<group>"; };
+		A526C0D815E7B90600BDC55B /* EchoConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchoConnection.m; sourceTree = "<group>"; };
+		A526C0D915E7B90600BDC55B /* EchoServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoServer.h; sourceTree = "<group>"; };
+		A526C0DA15E7B90600BDC55B /* EchoServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EchoServer.m; sourceTree = "<group>"; };
+		A526C0DF15E7BEC600BDC55B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A526C0E115E7C09600BDC55B /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		A526C0E215E7C09600BDC55B /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
+		A55AAE8D15E675B500F42C43 /* uStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55AAE9115E675B500F42C43 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A55AAE9315E675B500F42C43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A55AAE9515E675B500F42C43 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A55AAE9915E675B500F42C43 /* uStream-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uStream-Info.plist"; sourceTree = "<group>"; };
+		A55AAE9B15E675B500F42C43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A55AAE9D15E675B500F42C43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A55AAE9F15E675B500F42C43 /* uStream-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uStream-Prefix.pch"; sourceTree = "<group>"; };
+		A55AAEA015E675B500F42C43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A55AAEA115E675B500F42C43 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A55AAEA315E675B500F42C43 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A55AAEA415E675B500F42C43 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A55AAEA715E675B500F42C43 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		A5C73D6115E6782900C89E37 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A5C73D6415E679F000C89E37 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A5C73D6A15E7874D00C89E37 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A5C73D6C15E7883300C89E37 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A5C73D6E15E7885000C89E37 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A55AAE8A15E675B500F42C43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A526C0E015E7BEC600BDC55B /* CFNetwork.framework in Frameworks */,
+				A5C73D6F15E7885000C89E37 /* CoreMedia.framework in Frameworks */,
+				A5C73D6D15E7883300C89E37 /* CoreVideo.framework in Frameworks */,
+				A5C73D6B15E7874D00C89E37 /* MobileCoreServices.framework in Frameworks */,
+				A5C73D6515E679F000C89E37 /* QuartzCore.framework in Frameworks */,
+				A5C73D6215E6782900C89E37 /* AVFoundation.framework in Frameworks */,
+				A55AAE9215E675B500F42C43 /* UIKit.framework in Frameworks */,
+				A55AAE9415E675B500F42C43 /* Foundation.framework in Frameworks */,
+				A55AAE9615E675B500F42C43 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A55AAE8215E675B400F42C43 = {
+			isa = PBXGroup;
+			children = (
+				A526C0DF15E7BEC600BDC55B /* CFNetwork.framework */,
+				A5C73D6E15E7885000C89E37 /* CoreMedia.framework */,
+				A5C73D6C15E7883300C89E37 /* CoreVideo.framework */,
+				A5C73D6A15E7874D00C89E37 /* MobileCoreServices.framework */,
+				A55AAE9715E675B500F42C43 /* uStream */,
+				A55AAE9015E675B500F42C43 /* Frameworks */,
+				A55AAE8E15E675B500F42C43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A55AAE8E15E675B500F42C43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A55AAE8D15E675B500F42C43 /* uStream.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A55AAE9015E675B500F42C43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5C73D6415E679F000C89E37 /* QuartzCore.framework */,
+				A5C73D6115E6782900C89E37 /* AVFoundation.framework */,
+				A55AAE9115E675B500F42C43 /* UIKit.framework */,
+				A55AAE9315E675B500F42C43 /* Foundation.framework */,
+				A55AAE9515E675B500F42C43 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A55AAE9715E675B500F42C43 /* uStream */ = {
+			isa = PBXGroup;
+			children = (
+				A526C0D715E7B90600BDC55B /* EchoConnection.h */,
+				A526C0D815E7B90600BDC55B /* EchoConnection.m */,
+				A526C0D915E7B90600BDC55B /* EchoServer.h */,
+				A526C0DA15E7B90600BDC55B /* EchoServer.m */,
+				A55AAEA015E675B500F42C43 /* AppDelegate.h */,
+				A55AAEA115E675B500F42C43 /* AppDelegate.m */,
+				A55AAEA315E675B500F42C43 /* ViewController.h */,
+				A55AAEA415E675B500F42C43 /* ViewController.m */,
+				A55AAEA615E675B500F42C43 /* ViewController.xib */,
+				A55AAE9815E675B500F42C43 /* Supporting Files */,
+				A526C0E115E7C09600BDC55B /* Client.h */,
+				A526C0E215E7C09600BDC55B /* Client.m */,
+			);
+			path = uStream;
+			sourceTree = "<group>";
+		};
+		A55AAE9815E675B500F42C43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A55AAE9915E675B500F42C43 /* uStream-Info.plist */,
+				A55AAE9A15E675B500F42C43 /* InfoPlist.strings */,
+				A55AAE9D15E675B500F42C43 /* main.m */,
+				A55AAE9F15E675B500F42C43 /* uStream-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A55AAE8C15E675B500F42C43 /* uStream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A55AAEAB15E675B500F42C43 /* Build configuration list for PBXNativeTarget "uStream" */;
+			buildPhases = (
+				A55AAE8915E675B500F42C43 /* Sources */,
+				A55AAE8A15E675B500F42C43 /* Frameworks */,
+				A55AAE8B15E675B500F42C43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = uStream;
+			productName = uStream;
+			productReference = A55AAE8D15E675B500F42C43 /* uStream.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A55AAE8415E675B400F42C43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = A55AAE8715E675B400F42C43 /* Build configuration list for PBXProject "uStream" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A55AAE8215E675B400F42C43;
+			productRefGroup = A55AAE8E15E675B500F42C43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A55AAE8C15E675B500F42C43 /* uStream */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A55AAE8B15E675B500F42C43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A55AAE9C15E675B500F42C43 /* InfoPlist.strings in Resources */,
+				A55AAEA815E675B500F42C43 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A55AAE8915E675B500F42C43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A55AAE9E15E675B500F42C43 /* main.m in Sources */,
+				A55AAEA215E675B500F42C43 /* AppDelegate.m in Sources */,
+				A55AAEA515E675B500F42C43 /* ViewController.m in Sources */,
+				A526C0DC15E7B90600BDC55B /* EchoConnection.m in Sources */,
+				A526C0DD15E7B90600BDC55B /* EchoServer.m in Sources */,
+				A526C0E315E7C09600BDC55B /* Client.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A55AAE9A15E675B500F42C43 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A55AAE9B15E675B500F42C43 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A55AAEA615E675B500F42C43 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A55AAEA715E675B500F42C43 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A55AAEA915E675B500F42C43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A55AAEAA15E675B500F42C43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A55AAEAC15E675B500F42C43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uStream/uStream-Prefix.pch";
+				INFOPLIST_FILE = "uStream/uStream-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A55AAEAD15E675B500F42C43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uStream/uStream-Prefix.pch";
+				INFOPLIST_FILE = "uStream/uStream-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A55AAE8715E675B400F42C43 /* Build configuration list for PBXProject "uStream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A55AAEA915E675B500F42C43 /* Debug */,
+				A55AAEAA15E675B500F42C43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A55AAEAB15E675B500F42C43 /* Build configuration list for PBXNativeTarget "uStream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A55AAEAC15E675B500F42C43 /* Debug */,
+				A55AAEAD15E675B500F42C43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A55AAE8415E675B400F42C43 /* Project object */;
+}
