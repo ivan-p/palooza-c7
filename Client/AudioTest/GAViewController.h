@@ -3,7 +3,7 @@
 #import <CoreMedia/CoreMedia.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-@interface GAViewController : UIViewController<NSStreamDelegate, NSNetServiceBrowserDelegate> {
+@interface GAViewController : UIViewController<NSStreamDelegate, NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
     AVPlayer *player;
 	NSTimer *playbackTimer;
     NSInputStream	*inputStream;

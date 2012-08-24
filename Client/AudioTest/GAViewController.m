@@ -166,7 +166,10 @@
            didFindService:(NSNetService *)aNetService
                moreComing:(BOOL)moreComing
 {
-    [services addObject:aNetService]; 
+    NSLog(@"Did find service");
+//    [services addObject:aNetService];
+    [aNetService setDelegate:self];
+    [aNetService resolveWithTimeout:5.0];
 }
 
 
@@ -174,6 +177,7 @@
          didRemoveService:(NSNetService *)aNetService
                moreComing:(BOOL)moreComing
 {
+    NSLog(@"Did remove service");
     [services removeObject:aNetService];
 }
 
@@ -182,6 +186,38 @@
 {
     NSLog(@"An error occurred. Error code = %d", [error intValue]);
     // Handle error here
+}
+
+
+#pragma NetServiceResolution delegate
+
+// Sent when addresses are resolved
+- (void)netServiceDidResolveAddress:(NSNetService *)netService
+{
+    NSLog(@"Did resolve adress");
+    // Make sure [netService addresses] contains the
+    // necessary connection information
+    if ([self addressesComplete:[netService addresses]
+                 forServiceType:[netService type]]) {
+        [services addObject:netService];
+    }
+}
+
+// Sent if resolution fails
+- (void)netService:(NSNetService *)netService
+     didNotResolve:(NSDictionary *)errorDict
+{
+    [self handleError:[errorDict objectForKey:NSNetServicesErrorCode]];
+    [services removeObject:netService];
+}
+
+// Verifies [netService addresses]
+- (BOOL)addressesComplete:(NSArray *)addresses
+           forServiceType:(NSString *)serviceType
+{
+    // Perform appropriate logic to ensure that [netService addresses]
+    // contains the appropriate information to connect to the service
+    return YES;
 }
 
 #pragma mark - View lifecycle
