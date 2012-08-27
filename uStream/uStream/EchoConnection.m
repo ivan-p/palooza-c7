@@ -48,19 +48,28 @@
 }
 
 
+
+static pthread_mutex_t mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
+
+
 - (void)tryWrite
 {
-    @synchronized(outBuf)
+    //@synchronized(outBuf)
+    pthread_mutex_lock(&mutex);
     {
         if (outBuf.length)
         {
+            NSLog(@"Going to write: %d", outBuf.length);
+            
             NSInteger actuallyWritten = [_outputStream write:[outBuf bytes] maxLength:outBuf.length];
             if (actuallyWritten > 0)
             {
+                NSLog(@"Written: %d was %d", actuallyWritten, outBuf.length);
                 [outBuf replaceBytesInRange:NSMakeRange(0, actuallyWritten) withBytes:NULL length:0];
             }
         }
     }
+    pthread_mutex_unlock(&mutex);
 }
 
 
@@ -96,6 +105,7 @@
     [fileData writeToFile:path atomically:YES];
     [_vc addFile:path];
     
+    NSLog(@"Got file: %@", fname);
 }
 
 
@@ -135,14 +145,18 @@
     NSData *data = [[path lastPathComponent] dataUsingEncoding:NSUTF8StringEncoding];
     size_t fnameLen = [data length];
     
-    @synchronized(outBuf)
+    //@synchronized(outBuf)
+    pthread_mutex_lock(&mutex);
     {
         [outBuf appendBytes:&fnameLen length:4];
         [outBuf appendData:data];
         [outBuf appendBytes:&dataLen length:4];
         [outBuf appendData:fileData];
+        
+        [self tryWrite];
     }
-    [self tryWrite];
+    pthread_mutex_unlock(&mutex);
+    
 }
 
 @end

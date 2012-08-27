@@ -36,7 +36,7 @@
     
     id<ViewControllerDelegate> delegate;
     
-    AVQueuePlayer *player;
+    AVPlayer *player;
     
     
     EchoServer *server;

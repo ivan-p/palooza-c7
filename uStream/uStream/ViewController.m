@@ -3,6 +3,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController ()
 
@@ -144,14 +145,13 @@
 	if ( assetWriter.status == AVAssetWriterStatusWriting ) {
 		
 		if (mediaType == AVMediaTypeVideo) {
-            /*
 			if (assetWriterVideoIn.readyForMoreMediaData) {
 				if (![assetWriterVideoIn appendSampleBuffer:sampleBuffer]) {
 					assert(0);
 				}
 			}
-             */
-            [self saveImage:sampleBuffer];
+             
+            //[self saveImage:sampleBuffer];
 		}
 		else if (mediaType == AVMediaTypeAudio) {
 			if (assetWriterAudioIn.readyForMoreMediaData) {
@@ -350,7 +350,7 @@
     videoOrientation = [videoConnection videoOrientation];
 	[videoOut release];
 
-    NSURL *outFileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:@"file.mov"]];
+    NSURL *outFileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:@"f.mov"]];
     [[NSFileManager defaultManager] removeItemAtURL:outFileUrl error:nil];
     NSError *error;
     assetWriter = [[AVAssetWriter alloc] initWithURL:outFileUrl fileType:(NSString *)kUTTypeQuickTimeMovie error:&error];
@@ -364,14 +364,20 @@
 }
 
 
+- (void)backgroundSend:(NSString*)path
+{
+    [delegate onFileReadyToSend:path];
+}
+
 - (void)onChangeFile:(NSTimer*)timer
 {
     fileNum ++;
     
     dispatch_async(movieWritingQueue, ^{
-		if ([assetWriter finishWriting]) 
+        NSLog(@"Usual status: %d", assetWriter.status);
+		if (assetWriter.status == 1 && [assetWriter finishWriting]) 
         {
-            //[delegate onFileReadyToSend:[[assetWriter outputURL] path]];
+            [self performSelectorInBackground:@selector(backgroundSend:) withObject:[[assetWriter outputURL] path]];
             
 			[assetWriterAudioIn release];
 			[assetWriterVideoIn release];
@@ -381,14 +387,14 @@
 			readyToRecordVideo = NO;
 			readyToRecordAudio = NO;
             
-            NSURL *outFileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"file%d.mov", fileNum]]];
+            NSURL *outFileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"f%d.mov", fileNum]]];
             [[NSFileManager defaultManager] removeItemAtURL:outFileUrl error:nil];
             NSError *error;
             assetWriter = [[AVAssetWriter alloc] initWithURL:outFileUrl fileType:(NSString *)kUTTypeQuickTimeMovie error:&error];
 		}
 		else 
         {
-			assert(0);
+			
 		}
 	});
 }
@@ -407,6 +413,26 @@
 }
 
 
+
+- (void)setupAudioSession {
+    
+    static BOOL audioSessionSetup = NO;
+    if (audioSessionSetup) {
+        return;   
+    }
+    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: nil];
+    UInt32 doSetProperty = 1;
+    
+    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(doSetProperty), &doSetProperty);
+    
+    [[AVAudioSession sharedInstance] setActive: YES error: nil];
+    
+    audioSessionSetup = YES;
+    
+}
+
+
+
 - (void)addFile:(NSString*)path
 {
     if ([path hasSuffix:@"jpg"])
@@ -415,14 +441,21 @@
     }
     else if ([path hasSuffix:@"mov"])
     {
+        [self setupAudioSession];
         if (!player)
         {
             player = [[AVQueuePlayer alloc] initWithPlayerItem:[AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:path]]];
+            AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:player];
+            [layer setFrame:self.view.layer.bounds];
+            [self.view.layer addSublayer:layer];
+            //[layer release];
             [player play];
         }
         else
         {
-            [player insertItem:[AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:path]] afterItem:nil];
+            //[player insertItem:[AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:path]] afterItem:nil];
+            [player replaceCurrentItemWithPlayerItem:[AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:path]]];
+            [player play];
         }
     }
 }
